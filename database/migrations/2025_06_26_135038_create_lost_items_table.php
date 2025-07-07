@@ -16,6 +16,10 @@ return new class extends Migration
             $table->string('lost_item_name');
             $table->string('place');
             $table->string('finder_name');
+            $table->string('photo1')->nullable();
+            $table->string('photo2')->nullable();
+            $table->string('photo3')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

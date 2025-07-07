@@ -11,5 +11,9 @@ class LostItem extends Model
         'lost_item_name',
         'place',
         'finder_name',
+        'description',
+        'photo1',
+        'photo2',
+        'photo3',
     ];
 }

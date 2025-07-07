@@ -4,4 +4,7 @@
             一覧表示
         </h2>
     </x-slot>
+
+    <div>
+    </div>
 </x-app-layout>
