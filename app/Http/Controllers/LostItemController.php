@@ -16,7 +16,8 @@ class LostItemController extends Controller
      */
     public function index()
     {
-        return view('lost_items.index');
+        $lost_items = LostItem::all();
+        return view('lost_items.index', compact('lost_items'));
     }
 
     /**
