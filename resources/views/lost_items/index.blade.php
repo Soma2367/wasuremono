@@ -45,12 +45,18 @@
                                 {{ $lost_item->lost_item_name }}
                             </div>
                             <div class="flex space-x-3 ml-4">
-                                <button class="p-2 bg-white rounded-full shadow-md border border-blue-200 hover:bg-blue-100 hover:scale-110 transition focus:outline-none focus:ring-2 focus:ring-blue-300" title="編集" aria-label="編集">
-                                    <x-heroicon-o-pencil class="w-6 h-6 text-blue-500" />
-                                </button>
-                                <button class="p-2 bg-white rounded-full shadow-md border border-red-200 hover:bg-red-100 hover:scale-110 transition focus:outline-none focus:ring-2 focus:ring-red-300" title="削除" aria-label="削除">
-                                    <x-heroicon-o-trash class="w-6 h-6 text-red-500" />
-                                </button>
+                                <a href="{{ route('lost_items.edit', $lost_item) }}">
+                                    <button class="p-2 bg-white rounded-full shadow-md border border-blue-200 hover:bg-blue-100 hover:scale-110 transition focus:outline-none focus:ring-2 focus:ring-blue-300" title="編集" aria-label="編集">
+                                        <x-heroicon-o-pencil class="w-6 h-6 text-blue-500" />
+                                    </button>
+                                </a>
+                                <form action="{{ route('lost_items.destroy', $lost_item) }}" method="POST" onsubmit="return confirm('本当に削除しますか？');" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="p-2 bg-white rounded-full shadow-md border border-red-200 hover:bg-red-100 hover:scale-110 transition focus:outline-none focus:ring-2 focus:ring-red-300" title="削除" aria-label="削除">
+                                        <x-heroicon-o-trash class="w-6 h-6 text-red-500" />
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

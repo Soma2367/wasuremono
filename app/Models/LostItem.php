@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class LostItem extends Model
 {
     protected $fillable = [
+        'user_id',
         'lost_item_name',
         'place',
         'finder_name',
@@ -16,4 +17,8 @@ class LostItem extends Model
         'photo2',
         'photo3',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
